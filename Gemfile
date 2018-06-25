@@ -62,3 +62,6 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'pry'
 gem 'jquery-rails'
+gem 'redis'
+gem 'redis-namespace'
+gem 'awesome_print'
