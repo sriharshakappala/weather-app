@@ -36,10 +36,13 @@
   city = localStorage.getItem("city")
   if(city) {
     $('#query').val(city);
-    get_weather_info(event)
+    call_weather_forecast_api()
   }
   function get_weather_info(e) {
     e.preventDefault();
+    call_weather_forecast_api()
+  }
+  function call_weather_forecast_api() {
     city = $('#query').val();
     localStorage.setItem("city", city);
     $("#loader").addClass('loader')
