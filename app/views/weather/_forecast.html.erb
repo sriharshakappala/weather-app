@@ -7,10 +7,11 @@
   }
 </style>
 
-<br><br><br><br><br>
+<% city, region, country = parse_location_info(@forecast) %>
 <% dates, days, high, low, text = parse_forecast_info(@forecast) %>
-<h3>Forecast for next 10 days</h3>
 
+<h2>Showing weather information for <%= "#{city}, #{region}, #{country}" %> </h2>
+<h3>Forecast for next 10 days</h3>
 <table>
   <% [dates, days, high, low, text].each do |item| %>
   <tr>

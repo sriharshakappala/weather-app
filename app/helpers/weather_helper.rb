@@ -10,4 +10,12 @@ module WeatherHelper
     return dates, days, high, low, text
   end
 
+  def parse_location_info forecast_info
+    forecast_info = forecast_info['query']['results']['channel']['location']
+    city = forecast_info['city']
+    region = forecast_info['region']
+    country = forecast_info['country']
+    return city, region, country
+  end
+
 end
