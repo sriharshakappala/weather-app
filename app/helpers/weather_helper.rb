@@ -27,4 +27,12 @@ module WeatherHelper
     return distance, pressure, speed, temperature
   end
 
+  def parse_current_weather forecast_info
+    forecast_info = forecast_info['query']['results']['channel']['item']['condition']
+    date = forecast_info['date']
+    temp = forecast_info['temp']
+    text = forecast_info['text']
+    return date, temp, text
+  end
+
 end
