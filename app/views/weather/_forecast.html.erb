@@ -9,6 +9,7 @@
 
 <% city, region, country = parse_location_info(@forecast) %>
 <% dates, days, high, low, text = parse_forecast_info(@forecast) %>
+<% distance, pressure, speed, temperature = parse_units_info(@forecast) %>
 
 <h2>Showing weather information for <%= "#{city}, #{region}, #{country}" %> </h2>
 <h3>Forecast for next 10 days</h3>
@@ -21,3 +22,11 @@
   </tr>
   <% end %>
 </table>
+
+<h5>
+Legend:
+Distance - <%= distance %>,
+Pressure - <%= pressure %>,
+Speed - <%= speed %>,
+Temperature - <%= temperature %>
+</h5>

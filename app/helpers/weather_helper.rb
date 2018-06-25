@@ -18,4 +18,13 @@ module WeatherHelper
     return city, region, country
   end
 
+  def parse_units_info forecast_info
+    forecast_info = forecast_info['query']['results']['channel']['units']
+    distance = forecast_info['distance']
+    pressure = forecast_info['pressure']
+    speed = forecast_info['speed']
+    temperature = forecast_info['temperature']
+    return distance, pressure, speed, temperature
+  end
+
 end
