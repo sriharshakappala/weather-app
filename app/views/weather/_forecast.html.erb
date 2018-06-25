@@ -8,13 +8,8 @@
 </style>
 
 <br><br><br><br><br>
+<% dates, days, high, low, text = parse_forecast_info(@forecast) %>
 <h3>Forecast for next 10 days</h3>
-<% forecast_info = @forecast['query']['results']['channel']['item']['forecast'] %>
-<% dates = forecast_info.pluck('date') %>
-<% days = forecast_info.pluck('day') %>
-<% high = forecast_info.pluck('high') %>
-<% low = forecast_info.pluck('low') %>
-<% text = forecast_info.pluck('text') %>
 
 <table>
   <% [dates, days, high, low, text].each do |item| %>

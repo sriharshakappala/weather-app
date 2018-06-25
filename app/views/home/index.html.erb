@@ -22,7 +22,7 @@
 
 <%= form_tag do %>
   <%= text_field_tag 'query', '', autocomplete: :off, autofocus: true %>
-  <%= submit_tag 'Search', onclick: "get_weather_info(event)" %>
+  <%= submit_tag 'Search', onclick: "get_weather_info(event)", id: 'get_weather' %>
 <% end %>
 
 <div id="weather-info">
@@ -46,12 +46,14 @@
     city = $('#query').val();
     localStorage.setItem("city", city);
     $("#loader").addClass('loader')
+    $("#get_weather").prop('disabled', true);
     $.ajax({
       type: "GET",
       url: "/weather/forecast",
       data: { city: city }
     }).done(function() {
       $("#loader").removeClass('loader')
+      $("#get_weather").prop('disabled', false);
     });
   }
 </script>
