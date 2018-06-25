@@ -33,6 +33,11 @@
 </center>
 
 <script>
+  city = localStorage.getItem("city")
+  if(city) {
+    $('#query').val(city);
+    get_weather_info(event)
+  }
   function get_weather_info(e) {
     e.preventDefault();
     city = $('#query').val();
