@@ -1,0 +1,6 @@
+<h1>Check weather instantly!</h1>
+
+<%= form_tag('/search', :method => :get) do %>
+  <%= text_field_tag 'query', params[:query], :autocomplete => :off, :autofocus => true %>
+  <%= submit_tag 'Search' %>
+<% end %>
