@@ -36,6 +36,7 @@
   function get_weather_info(e) {
     e.preventDefault();
     city = $('#query').val();
+    localStorage.setItem("city", city);
     $("#loader").addClass('loader')
     $.ajax({
       type: "GET",
