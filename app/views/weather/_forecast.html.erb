@@ -1,0 +1,27 @@
+<style>
+  table { border-collapse: collapse; }
+  tr { border: none; }
+  td {
+    border-right: solid 1px #f00;
+    border-left: solid 1px #f00;
+  }
+</style>
+
+<br><br><br><br><br>
+<h3>Forecast for next 10 days</h3>
+<% forecast_info = @forecast['query']['results']['channel']['item']['forecast'] %>
+<% dates = forecast_info.pluck('date') %>
+<% days = forecast_info.pluck('day') %>
+<% high = forecast_info.pluck('high') %>
+<% low = forecast_info.pluck('low') %>
+<% text = forecast_info.pluck('text') %>
+
+<table>
+  <% [dates, days, high, low, text].each do |item| %>
+  <tr>
+    <% dates.count.times do |i| %>
+    <td><%= item[i] %></td>
+    <% end %>
+  </tr>
+  <% end %>
+</table>
