@@ -7,9 +7,7 @@
   }
 </style>
 
-<% binding.pry %>
-
-<% if @forecast['query']['results']['channel']['item'].nil? %>
+<% if @forecast['query']['count'] == 0 || @forecast['query']['results']['channel']['item'].nil? %>
   <h3>Sorry, no info found for requested location!</h3>
 <% else %>
   <% city, region, country = parse_location_info(@forecast) %>

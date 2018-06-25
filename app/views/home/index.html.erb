@@ -49,6 +49,7 @@
     localStorage.setItem("city", city);
     $("#loader").addClass('loader')
     $("#get_weather").prop('disabled', true);
+    $("#weather-info").html('')
     $.ajax({
       type: "GET",
       url: "/weather/forecast",
