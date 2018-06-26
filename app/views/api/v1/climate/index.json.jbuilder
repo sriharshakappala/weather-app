@@ -1,4 +1,5 @@
 json.results do
+  json.count 1
   json.location do
     json.city @city.city
     json.region @city.region
