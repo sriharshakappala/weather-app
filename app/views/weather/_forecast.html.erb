@@ -1,12 +1,3 @@
-<style>
-  table { border-collapse: collapse; }
-  tr { border: none; }
-  td {
-    border-right: solid 1px #f00;
-    border-left: solid 1px #f00;
-  }
-</style>
-
 <% if @forecast['query']['count'] == 0 || @forecast['query']['results']['channel']['item'].nil? %>
   <h3>Sorry, no info found for requested location!</h3>
 <% else %>
