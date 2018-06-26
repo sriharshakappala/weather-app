@@ -1,0 +1,20 @@
+<% if false %>
+  <h3>Sorry, no info found for requested location!</h3>
+<% else %>
+  <% location = @forecast['results']['location'] %>
+  <% condition = @forecast['results']['condition'] %>
+  <% forecast = @forecast['results']['forecast'] %>
+  <h2>Showing weather information for <%= "#{location['city']}, #{location['region']}, #{location['country']}" %> </h2>
+  <h3>Current Weather - <%= "#{condition['high']}, #{condition['condition']}" %></h3>
+  <h3>Forecast for next 10 days</h3>
+  <table>
+    <% forecast.each do |item| %>
+      <tr>
+        <td><%= item['date'] %></td>
+        <td><%= item['high'] %></td>
+        <td><%= item['low'] %></td>
+        <td><%= item['condition'] %></td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>

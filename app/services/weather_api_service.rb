@@ -14,7 +14,7 @@ class WeatherApiService
 
   def getURL type
     if type == :forecast
-      "http://localhost:3001/city/forecast/#{@city_code}"
+      "http://localhost:3002/api/v1/climate/#{@city_code}"
     end
   end
 

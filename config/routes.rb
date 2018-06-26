@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get '/weather/forecast'     => 'weather#forecast'
   get '/climate'              => 'climate#index'
   post '/get_suggestions'     => 'cities#get_suggestions'
+  get '/climate/forecast'     => 'climate#forecast'
 
   resource :api do
     resource :v1 do
