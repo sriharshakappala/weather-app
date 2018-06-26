@@ -22,6 +22,17 @@ namespace :generate do
   end
 
   task :weather_data => :environment do
+    ['mum', 'che', 'sancla'].each do |city|
+      (Date.today..(Date.today + 20.days)).to_a.each do |date|
+        Weather.create(
+          code: city,
+          date: date,
+          high: (60..70).to_a.sample,
+          low: (50..60).to_a.sample,
+          condition: ['Thunderstorms', 'Scattered Thunderstorms', 'Partly Cloudy', 'Cloudy', 'Mostly Cloudy', 'Rain', 'Scattered Showers', 'Mostly Sunny'].sample
+        )
+      end
+    end
   end
 
 end
